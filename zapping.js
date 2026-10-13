@@ -261,6 +261,18 @@
     }
   }
 
+  // Jellyfin's player turns the mouse wheel into volume changes: keep the wheel
+  // (and clicks) on our panels from reaching it, while still scrolling the list.
+  // Capture phase on window runs before the player's own listeners.
+  for (const type of ['wheel', 'mousewheel', 'DOMMouseScroll']) {
+    window.addEventListener(type, ev => {
+      if (ev.target instanceof Node && (guide.contains(ev.target) || box.contains(ev.target))) {
+        ev.stopImmediatePropagation();
+        ev.stopPropagation();
+      }
+    }, { capture: true, passive: true });
+  }
+
   function mount() {
     box.children[0].title = t('next');
     box.children[1].title = t('guide');
