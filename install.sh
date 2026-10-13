@@ -1,9 +1,9 @@
 #!/bin/sh
 # jellyfin-zapping installer — injects zapping.js into the Jellyfin web client.
 #
-#   sudo ./install.sh                 install (auto-detects the web folder)
-#   sudo ./install.sh --web DIR       install into a specific jellyfin-web folder
-#   sudo ./install.sh --uninstall     remove it and restore index.html
+#   sudo sh install.sh                 install (auto-detects the web folder)
+#   sudo sh install.sh --web DIR       install into a specific jellyfin-web folder
+#   sudo sh install.sh --uninstall     remove it and restore index.html
 #
 # On Debian/Ubuntu it also adds an apt hook, so the script is re-applied
 # automatically after every jellyfin-web upgrade.

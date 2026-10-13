@@ -34,13 +34,13 @@ If you use a plugin that injects custom JavaScript into the web client, paste th
 ```sh
 git clone https://github.com/nebry-ber/jellyfin-zapping.git
 cd jellyfin-zapping
-sudo ./install.sh
+sudo sh install.sh
 ```
 
 The script copies `zapping.js` next to the web client, adds one `<script>` tag to `index.html`, and installs an apt hook that re-applies it after every `jellyfin-web` upgrade. Reload Jellyfin in the browser afterwards.
 
-Custom location: `sudo ./install.sh --web /path/to/jellyfin-web`
-Uninstall: `sudo ./install.sh --uninstall`
+Custom location: `sudo sh install.sh --web /path/to/jellyfin-web`
+Uninstall: `sudo sh install.sh --uninstall`
 
 ### Docker
 
@@ -64,7 +64,7 @@ Zapping per la **TV in diretta di Jellyfin** dal browser: passi al canale succes
 - I pulsanti compaiono e spariscono insieme alla barra di Jellyfin.
 - **Margine anti-scatti:** al primo blocco il player aspetta ~20 secondi di buffer prima di ripartire, così le pause della sorgente non si sentono più (`BUFFER_TARGET = 0` per disattivarlo).
 
-Installazione: `sudo ./install.sh` sul server (pacchetto Debian/Ubuntu), oppure incolla `zapping.js` in un plugin che inietta JavaScript nel client web. Funziona solo nel client web, non nelle app native.
+Installazione: `sudo sh install.sh` sul server (pacchetto Debian/Ubuntu), oppure incolla `zapping.js` in un plugin che inietta JavaScript nel client web. Funziona solo nel client web, non nelle app native.
 
 ## License
 
